@@ -1,0 +1,23 @@
+public Node reverseLinkList(head){
+        ListNode node=head;
+        if (head==null)
+            return null;
+        int count=1;
+        while(node.next!=null)
+            {
+            node=node.next;
+            count++;
+        }
+        if(k>count)
+            return null;
+        int i=1;
+        int temp=count-k+1;
+        node=head;
+        while(i
+            {
+            node=node.next;
+            i++;
+        }
+       return node;
+    }
+}
