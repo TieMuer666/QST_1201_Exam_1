@@ -97,3 +97,13 @@ public class Dedup {
      }
 
 }
+map输出数据的key为数据，而在这个实例中每个数据代表输入文件中的一行内容，所
+
+以map阶段要完成的任务就是在采用Hadoop默认的作业输入方式之后，将value设置为
+
+key，并直接输出（输出中的value任意）。map中的结果经过shuffle过程之后交给
+
+reduce。reduce阶段不会管每个key有多少个value，它直接将输入的key复制为输出的
+
+key，并输出就可以了（输出中的value被设置成空了）。
+
